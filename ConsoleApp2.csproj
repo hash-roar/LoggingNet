@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Colorful.Console" Version="1.2.15" />
+    <PackageReference Include="log4net" Version="2.0.15" />
+    <PackageReference Include="NLog" Version="5.2.8" />
+    <PackageReference Include="Spectre.Console" Version="0.48.0" />
+    <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+    <PackageReference Include="YamlDotNet" Version="15.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="D:\working\new\temp\ConsoleApp2\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="config.yaml" />
+    <None Remove="Nlog.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="config.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Nlog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="D:\working\new\temp\ConsoleApp2\.editorconfig" />
+  </ItemGroup>
+
+</Project>
