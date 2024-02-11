@@ -28,7 +28,6 @@ namespace ConsoleApp2
     {
       this.from = from;
       this.to = to;
-      logger.Info($"create channel {name} from {from} to {to}");
       this.tcpListener = new TcpListener(IPAddress.Parse(host), from);
       this.name = name;
     }
@@ -36,6 +35,7 @@ namespace ConsoleApp2
     public async Task Start()
     {
       tcpListener.Start();
+      logger.Info($"start channel {name} from {from} to {to}");
       try
       {
         tcpListener.Server.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);

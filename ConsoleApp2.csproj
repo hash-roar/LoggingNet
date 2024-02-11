@@ -10,7 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Colorful.Console" Version="1.2.15" />
     <PackageReference Include="log4net" Version="2.0.15" />
-    <PackageReference Include="NLog" Version="5.2.8" />
+    <PackageReference Include="Nlog" Version="5.2.8" />
     <PackageReference Include="Spectre.Console" Version="0.48.0" />
     <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
     <PackageReference Include="YamlDotNet" Version="15.1.1" />
@@ -29,13 +29,13 @@
     <Content Include="config.yaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Nlog.config">
+    <Content Include="nlog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="D:\working\new\temp\ConsoleApp2\.editorconfig" />
+    <None Include="./.editorconfig" />
   </ItemGroup>
 
 </Project>

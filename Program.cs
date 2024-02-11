@@ -16,12 +16,19 @@ namespace ConsoleApp2
       var configFileOption = new Option<string>(name: "-c", description: "The path to the config file", getDefaultValue: () => "config.yaml");
       var rootCommand = new RootCommand("tcp redirect");
       rootCommand.AddOption(configFileOption);
-
       rootCommand.SetHandler(async (configFile) =>
       {
-        var config = Config.parse(configFile);
-        Server server = new(config);
-        await server.Start();
+        try
+        {
+          var config = Config.parse(configFile);
+          Server server = new(config);
+          await server.Start();
+        }
+        catch (Exception e)
+        {
+          CConsole.WriteLine(e.Message, SysColor.Red);
+        }
+
         ;
       }, configFileOption);
       return await rootCommand.InvokeAsync(args);
