@@ -65,7 +65,7 @@ namespace ConsoleApp2
       {
         try
         {
-          const int bufferSize = 1024 * 1024 * 10;
+          const int bufferSize = 1024 * 1024 * 4;
           var buffer = new byte[bufferSize];
           socket.ReceiveBufferSize = bufferSize;
           while (true)

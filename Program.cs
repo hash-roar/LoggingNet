@@ -13,7 +13,8 @@ namespace ConsoleApp2
   {
     static async Task<int> Main(string[] args)
     {
-      var configFileOption = new Option<string>(name: "-c", description: "The path to the config file", getDefaultValue: () => "config.yaml");
+      NLog.LogManager.Configuration = new NLog.Config.XmlLoggingConfiguration("config/nlog.config");
+      var configFileOption = new Option<string>(name: "-c", description: "The path to the config file", getDefaultValue: () => "config/config.yaml");
       var rootCommand = new RootCommand("tcp redirect");
       rootCommand.AddOption(configFileOption);
       rootCommand.SetHandler(async (configFile) =>
